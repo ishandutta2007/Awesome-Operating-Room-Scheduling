@@ -1,0 +1,171 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070b19" />
+      <stop offset="50%" stop-color="#0d1b38" />
+      <stop offset="100%" stop-color="#052c42" />
+    </linearGradient>
+
+    <!-- Glowing Text Gradient -->
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#818cf8" />
+      <stop offset="100%" stop-color="#34d399" />
+    </linearGradient>
+
+    <!-- Pulse Gradient for Cards -->
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.9" />
+    </linearGradient>
+
+    <!-- Neon Glow Filter -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <style>
+      .pulse-circle {
+        animation: pulseAnimation 3s infinite ease-in-out;
+        transform-origin: center;
+      }
+      .wave-line {
+        animation: waveShift 4s infinite linear;
+      }
+      .radar-sweep {
+        animation: rotateSweep 6s infinite linear;
+        transform-origin: 1040px 180px;
+      }
+      .shimmer-badge {
+        animation: badgeGlow 2.5s infinite alternate;
+      }
+      .node-pulse {
+        animation: nodeFlash 2s infinite ease-in-out alternate;
+      }
+
+      @keyframes pulseAnimation {
+        0%, 100% { transform: scale(1); opacity: 0.7; }
+        50% { transform: scale(1.15); opacity: 1; }
+      }
+      @keyframes waveShift {
+        0% { stroke-dashoffset: 0; }
+        100% { stroke-dashoffset: -120; }
+      }
+      @keyframes rotateSweep {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+      @keyframes badgeGlow {
+        from { filter: drop-shadow(0 0 4px #06b6d4); }
+        to { filter: drop-shadow(0 0 14px #818cf8); }
+      }
+      @keyframes nodeFlash {
+        0% { fill: #38bdf8; r: 4; }
+        100% { fill: #34d399; r: 6; }
+      }
+    </style>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="1200" height="360" rx="16" fill="url(#bgGrad)" />
+
+  <!-- Subtle High-Tech Grid Pattern -->
+  <g stroke="#38bdf8" stroke-width="0.5" opacity="0.12">
+    <line x1="0" y1="60" x2="1200" y2="60" />
+    <line x1="0" y1="120" x2="1200" y2="120" />
+    <line x1="0" y1="180" x2="1200" y2="180" />
+    <line x1="0" y1="240" x2="1200" y2="240" />
+    <line x1="0" y1="300" x2="1200" y2="300" />
+    <line x1="150" y1="0" x2="150" y2="360" />
+    <line x1="300" y1="0" x2="300" y2="360" />
+    <line x1="450" y1="0" x2="450" y2="360" />
+    <line x1="600" y1="0" x2="600" y2="360" />
+    <line x1="750" y1="0" x2="750" y2="360" />
+    <line x1="900" y1="0" x2="900" y2="360" />
+    <line x1="1050" y1="0" x2="1050" y2="360" />
+  </g>
+
+  <!-- Left Side: Surgical / OR Optimization Graphic Visuals -->
+  <!-- Floating Dashboard Card 1: OR Room 1 Utilization -->
+  <g transform="translate(60, 48)">
+    <rect width="220" height="74" rx="10" fill="url(#cardGrad)" stroke="#38bdf8" stroke-width="1.2" opacity="0.85" />
+    <circle cx="24" cy="26" r="7" fill="#10b981" class="pulse-circle" />
+    <text x="38" y="30" fill="#f8fafc" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="700">OR SUITE 01 • ACTIVE</text>
+    <text x="24" y="54" fill="#94a3b8" font-family="system-ui, -apple-system, sans-serif" font-size="11">Utilization: 94.2% (Turnover: 14m)</text>
+  </g>
+
+  <!-- Floating Dashboard Card 2: AI Predictive Allocation -->
+  <g transform="translate(60, 140)">
+    <rect width="220" height="74" rx="10" fill="url(#cardGrad)" stroke="#818cf8" stroke-width="1.2" opacity="0.85" />
+    <circle cx="24" cy="26" r="7" fill="#818cf8" class="pulse-circle" />
+    <text x="38" y="30" fill="#f8fafc" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="700">AI BLOCK SCHEDULER</text>
+    <text x="24" y="54" fill="#94a3b8" font-family="system-ui, -apple-system, sans-serif" font-size="11">CP-SAT / MILP Optimizing 48 Cases</text>
+  </g>
+
+  <!-- Floating Dashboard Card 3: Capacity Status -->
+  <g transform="translate(60, 232)">
+    <rect width="220" height="74" rx="10" fill="url(#cardGrad)" stroke="#34d399" stroke-width="1.2" opacity="0.85" />
+    <circle cx="24" cy="26" r="7" fill="#38bdf8" class="pulse-circle" />
+    <text x="38" y="30" fill="#f8fafc" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="700">PERIOPERATIVE FLOW</text>
+    <text x="24" y="54" fill="#94a3b8" font-family="system-ui, -apple-system, sans-serif" font-size="11">Zero Overtime • PACU Synced</text>
+  </g>
+
+  <!-- Center-Right: Core Branding Typography -->
+  <g transform="translate(325, 76)">
+    <!-- Category Badge -->
+    <g class="shimmer-badge">
+      <rect x="0" y="0" width="300" height="28" rx="14" fill="#0369a1" fill-opacity="0.35" stroke="#38bdf8" stroke-width="1" />
+      <text x="14" y="19" fill="#38bdf8" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="600" letter-spacing="1">⚡ CURATED HEALTHCARE AI &amp; OR TECH</text>
+    </g>
+
+    <!-- Main Title -->
+    <text x="0" y="76" fill="url(#textGrad)" font-family="system-ui, -apple-system, sans-serif" font-size="36" font-weight="900" letter-spacing="-0.5" filter="url(#glow)">
+      Awesome Operating Room
+    </text>
+    <text x="0" y="118" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="36" font-weight="900" letter-spacing="-0.5">
+      Scheduling &amp; Optimization
+    </text>
+
+    <!-- Subtitle / Tagline -->
+    <text x="0" y="160" fill="#94a3b8" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="400">
+      Enterprise SaaS Platforms, AI Block Allocators, MILP/CP-SAT Solvers &amp; Open-Source Tools
+    </text>
+
+    <!-- Key Feature Pills -->
+    <g transform="translate(0, 190)">
+      <rect x="0" y="0" width="130" height="26" rx="6" fill="#1e293b" stroke="#475569" stroke-width="1" />
+      <text x="12" y="17" fill="#cbd5e1" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="500">🏥 Block Time Analytics</text>
+
+      <rect x="140" y="0" width="130" height="26" rx="6" fill="#1e293b" stroke="#475569" stroke-width="1" />
+      <text x="152" y="17" fill="#cbd5e1" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="500">🤖 AI Case Prediction</text>
+
+      <rect x="280" y="0" width="125" height="26" rx="6" fill="#1e293b" stroke="#475569" stroke-width="1" />
+      <text x="292" y="17" fill="#cbd5e1" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="500">📊 OR Utilization</text>
+
+      <rect x="415" y="0" width="145" height="26" rx="6" fill="#1e293b" stroke="#475569" stroke-width="1" />
+      <text x="427" y="17" fill="#cbd5e1" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="500">🔓 Open-Source EHR/ILP</text>
+    </g>
+  </g>
+
+  <!-- Right Side: Dynamic ECG Waveform & OR Radar Dial -->
+  <g transform="translate(1040, 180)">
+    <!-- Outer Orbit Dial -->
+    <circle cx="0" cy="0" r="110" fill="none" stroke="#1e293b" stroke-width="2" />
+    <circle cx="0" cy="0" r="80" fill="none" stroke="#38bdf8" stroke-dasharray="6,6" stroke-width="1.5" opacity="0.4" />
+    <circle cx="0" cy="0" r="50" fill="none" stroke="#818cf8" stroke-width="1" opacity="0.6" />
+
+    <!-- Radar Line Pulse -->
+    <line x1="0" y1="0" x2="80" y2="-80" stroke="#38bdf8" stroke-width="2" class="radar-sweep" opacity="0.8" filter="url(#glow)" />
+
+    <!-- Live Nodes on Radar -->
+    <circle cx="35" cy="-45" class="node-pulse" />
+    <circle cx="-50" cy="30" class="node-pulse" />
+    <circle cx="20" cy="55" class="node-pulse" />
+    <circle cx="-30" cy="-60" class="node-pulse" />
+
+    <!-- Heartbeat / Telemetry Pulse Line -->
+    <path d="M-130,0 L-70,0 L-50,-25 L-35,35 L-20,-45 L-5,25 L10,-10 L30,0 L130,0" fill="none" stroke="#34d399" stroke-width="2.5" stroke-dasharray="140, 40" class="wave-line" filter="url(#glow)" />
+  </g>
+</svg>
