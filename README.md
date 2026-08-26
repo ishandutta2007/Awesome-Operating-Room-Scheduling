@@ -1,6 +1,6 @@
 # Awesome-Operating-Room-Scheduling
 
-# Top Operating Room Scheduling Platforms Ecosystem
+## Top Operating Room Scheduling Platforms Ecosystem
 **Curated List of SaaS Products & Open-Source GitHub Projects**
 *Focused on Surgical Case Scheduling, Block Time Management, OR Utilization, Perioperative Workflow & Capacity Optimization*
 **Last updated: August 2026**
